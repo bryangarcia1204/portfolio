@@ -12,19 +12,19 @@ Portafolio personal desarrollado con React, Vite y Tailwind CSS.
 
 ## Desarrollo local
 
-\`\`\`bash
+```bash
 npm install
 npm run dev
-\`\`\`
+```
 
 Abre http://localhost:5173
 
 ## Build
 
-\`\`\`bash
+```bash
 npm run build
 npm run preview
-\`\`\`
+```
 
 ## Licencia
 
