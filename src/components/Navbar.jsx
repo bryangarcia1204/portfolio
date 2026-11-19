@@ -49,7 +49,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/80'
+          ? 'bg-black/80 backdrop-blur-lg border-b border-accent/20 shadow-[0_4px_30px_rgba(255,87,34,0.15)]'
           : 'bg-transparent'
       }`}
     >
@@ -75,7 +75,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="active-pill"
-                      className="absolute inset-0 -z-10 bg-accent/10 rounded-md border border-accent/30"
+                      className="absolute inset-0 -z-10 bg-accent/15 rounded-md border border-accent/40 shadow-[0_0_14px_rgba(255,87,34,0.45)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -116,7 +116,7 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-slate-950/95 backdrop-blur border-t border-slate-800 px-6 py-4 space-y-3"
+          className="md:hidden bg-black/95 backdrop-blur border-t border-accent/20 px-6 py-4 space-y-3"
         >
           {links.map((l) => (
             <li key={l.href}>

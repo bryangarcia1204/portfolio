@@ -10,23 +10,21 @@
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    background-color: #000000;
   }
   ::selection {
-    @apply bg-accent/30 text-white;
+    @apply bg-accent/50 text-white;
   }
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #0f172a;
+    background: #000;
   }
   ::-webkit-scrollbar-thumb {
-    background: #334155;
+    background: linear-gradient(to bottom, #ff3d00, #ff0066);
     border-radius: 10px;
-    border: 2px solid #0f172a;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #10b981;
+    border: 2px solid #000;
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -40,48 +38,130 @@
   .container-x {
     @apply max-w-6xl mx-auto px-6;
   }
+
   .btn {
     @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-300;
   }
+
   .btn-primary {
-    @apply btn bg-accent hover:bg-accent-dark text-slate-950 shadow-lg shadow-accent/20 relative overflow-hidden;
+    @apply btn bg-accent hover:bg-accent-dark text-white font-semibold shadow-[0_0_20px_rgba(255,87,34,0.5)] hover:shadow-[0_0_30px_rgba(255,87,34,0.8)] relative overflow-hidden;
   }
   .btn-primary::after {
     content: '';
     @apply absolute top-0 h-full w-full;
     left: -100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transition: left 0.6s ease;
   }
   .btn-primary:hover::after {
     left: 100%;
   }
+
   .btn-ghost {
-    @apply btn border border-slate-700 hover:border-accent hover:text-accent hover:bg-accent/5;
+    @apply btn border border-slate-700 hover:border-electric hover:text-electric hover:bg-electric/5 hover:shadow-[0_0_16px_rgba(0,229,255,0.35)] transition-all;
   }
+
   .card {
-    @apply relative bg-slate-900/70 backdrop-blur border border-slate-800 rounded-xl p-6 transition-all duration-300;
+    @apply relative bg-coal-900/60 backdrop-blur-md border border-slate-800/80 rounded-xl p-6 transition-all duration-300 overflow-hidden;
   }
   .card:hover {
-    @apply border-accent/60;
-    box-shadow: 0 20px 40px -20px rgba(16, 185, 129, 0.35);
+    @apply border-accent/70;
+    box-shadow:
+      0 0 0 1px rgba(255, 87, 34, 0.25) inset,
+      0 20px 50px -20px rgba(255, 87, 34, 0.55),
+      0 0 40px -10px rgba(255, 61, 0, 0.35);
   }
+
   .tag {
-    @apply text-xs font-mono px-2.5 py-1 rounded-md bg-slate-800 text-emerald-300 border border-slate-700 transition-all duration-200 hover:border-accent hover:text-accent;
+    @apply text-xs font-mono px-2.5 py-1 rounded-md bg-coal-800 text-amber-300 border border-slate-800 transition-all duration-200;
+  }
+  .tag:hover {
+    @apply border-accent text-white;
+    box-shadow: 0 0 12px rgba(255, 87, 34, 0.55);
   }
 }
 
 @layer utilities {
+  /* Texto de metal fundido con shimmer animado */
   .text-gradient {
-    @apply bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 bg-clip-text text-transparent;
+    background: linear-gradient(
+      90deg,
+      #ff9800 0%,
+      #ff5722 25%,
+      #ff0066 50%,
+      #ff5722 75%,
+      #ff9800 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: molten 5s ease-in-out infinite;
   }
+
+  /* Grid con brasas de fondo */
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
-    background-size: 44px 44px;
+      linear-gradient(to right, rgba(255, 87, 34, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 87, 34, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
+
   .bg-radial-fade {
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(16, 185, 129, 0.12), transparent);
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 87, 34, 0.22), transparent 65%),
+      radial-gradient(ellipse 60% 50% at 50% 100%, rgba(255, 61, 0, 0.18), transparent 70%);
+  }
+
+  /* Spotlight que sigue al cursor */
+  .spotlight {
+    position: relative;
+    overflow: hidden;
+    --mx: 50%;
+    --my: 50%;
+  }
+  .spotlight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      360px circle at var(--mx) var(--my),
+      rgba(255, 87, 34, 0.18),
+      rgba(255, 61, 0, 0.08) 30%,
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+
+  /* Ruido sutil sobre todo el body */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Glow cian opcional (no colisiona con utilidades de Tailwind) */
+  .glow-electric {
+    color: #00e5ff;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  }
+}
+
+/* Keyframes fuera de @layer (recomendado por Tailwind) */
+@keyframes molten {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }

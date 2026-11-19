@@ -18,7 +18,7 @@ export default function SectionHeading({ title, subtitle, center = false }) {
         whileInView={{ width: 60 }}
         viewport={viewport}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className={`h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mb-6 ${
+        className={`h-1 rounded-full mb-6 bg-gradient-to-r from-amber-300 via-orange-500 to-red-600 shadow-[0_0_10px_rgba(249,115,22,0.6)] ${
           center ? 'mx-auto' : ''
         }`}
       />

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../i18n/LanguageContext'
 import SectionHeading from './SectionHeading'
+import SpotlightCard from './SpotlightCard'
 import { stagger, item, viewport } from '../lib/animations'
 
 export default function Experience() {
@@ -30,9 +31,9 @@ export default function Experience() {
                 whileInView={{ scale: 1 }}
                 viewport={viewport}
                 transition={{ delay: i * 0.1 + 0.2, type: 'spring', stiffness: 300 }}
-                className="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-accent ring-4 ring-slate-950"
+                className="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-accent ring-4 ring-black shadow-[0_0_14px_rgba(255,87,34,0.9)]"
               />
-              <p className="text-sm font-mono text-emerald-300 mb-1">{e.period}</p>
+              <p className="text-sm font-mono text-amber-300 mb-1">{e.period}</p>
               <h3 className="text-lg font-semibold text-white">{e.role}</h3>
               <p className="text-sm text-slate-500 mb-3">{e.company}</p>
               <ul className="space-y-2 text-sm text-slate-400">
@@ -64,15 +65,12 @@ export default function Experience() {
           className="grid sm:grid-cols-2 gap-4"
         >
           {education.map((ed, i) => (
-            <motion.div
-              key={i}
-              variants={item}
-              whileHover={{ y: -4 }}
-              className="card"
-            >
-              <p className="text-sm font-mono text-emerald-300 mb-1">{ed.period}</p>
-              <h4 className="font-semibold text-white">{ed.title}</h4>
-              <p className="text-sm text-slate-500">{ed.place}</p>
+            <motion.div key={i} variants={item} whileHover={{ y: -4 }}>
+              <SpotlightCard className="card h-full">
+                <p className="text-sm font-mono text-amber-300 mb-1">{ed.period}</p>
+                <h4 className="font-semibold text-white">{ed.title}</h4>
+                <p className="text-sm text-slate-500">{ed.place}</p>
+              </SpotlightCard>
             </motion.div>
           ))}
         </motion.div>

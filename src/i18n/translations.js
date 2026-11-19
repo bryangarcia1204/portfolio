@@ -188,6 +188,16 @@ export const translations = {
         period: '2019 – 2022',
       },
     ],
+    stats: {
+      title: 'Impacto en números',
+      subtitle: 'Resultados medibles de proyectos reales.',
+      items: [
+        { value: 40, suffix: '%', label: 'Reducción de tiempo en tareas administrativas' },
+        { value: 30, suffix: '%', label: 'Reducción de procesos manuales' },
+        { value: 99.5, suffix: '%', label: 'Disponibilidad de sistemas críticos', decimals: 1 },
+        { value: 3, suffix: '+', label: 'Años de experiencia' },
+      ],
+    },
     footer: { madeWith: 'Hecho con' },
   },
 
@@ -380,6 +390,16 @@ export const translations = {
         period: '2019 – 2022',
       },
     ],
+    stats: {
+      title: 'Impact in numbers',
+      subtitle: 'Measurable results from real projects.',
+      items: [
+        { value: 40, suffix: '%', label: 'Reduction in administrative task time' },
+        { value: 30, suffix: '%', label: 'Reduction of manual processes' },
+        { value: 99.5, suffix: '%', label: 'Critical systems uptime', decimals: 1 },
+        { value: 3, suffix: '+', label: 'Years of experience' },
+      ],
+    },
     footer: { madeWith: 'Made with' },
   },
 }

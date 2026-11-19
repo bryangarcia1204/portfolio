@@ -5,7 +5,7 @@ export default function Footer() {
   const { profile, footer } = t
 
   return (
-    <footer className="border-t border-slate-800 py-8">
+    <footer className="border-t border-slate-900 py-8 relative">
       <div className="container-x flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
         <p>
           © {new Date().getFullYear()} {profile.name}

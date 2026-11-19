@@ -8,11 +8,19 @@ export default function Contact() {
   const { sections, contact } = t
 
   return (
-    <section id="contacto" className="py-24 bg-slate-900/30 relative overflow-hidden">
+    <section
+      id="contacto"
+      className="py-24 relative overflow-hidden border-t border-slate-900"
+    >
+      {/* Glow pulsante de fuego */}
       <motion.div
-        animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }}
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent rounded-full blur-3xl -z-0"
+        animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.6, 0.35] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] -z-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(255,87,34,0.5), rgba(255,0,102,0.2) 50%, transparent 75%)',
+        }}
       />
 
       <div className="container-x max-w-3xl text-center relative">
