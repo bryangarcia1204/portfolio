@@ -148,7 +148,7 @@ export const translations = {
           solution:
             'Soluciones personalizadas para automatizar tareas administrativas e integrar sistemas internos mediante APIs REST con Django y FastAPI.',
           result: 'Reducción del 40% en tiempo de ejecución de tareas administrativas.',
-          stack: ['Django', 'FastAPI', 'PostgreSQL', 'MySQL', 'Python'],
+          stack: ['Django', 'PostgreSQL', 'Redist', 'Python'],
           repo: '',
           demo: '',
         },
@@ -156,13 +156,14 @@ export const translations = {
     },
     skills: {
       groups: [
-        { label: 'Backend', items: ['Python', 'Django', 'FastAPI', 'Node.js'] },
-        { label: 'Frontend', items: ['JavaScript', 'React', 'Next.js'] },
-        { label: 'Bases de datos', items: ['PostgreSQL', 'MySQL', 'SQLite', 'MongoDB'] },
-        { label: 'DevOps y herramientas', items: ['Docker', 'Git', 'Linux'] },
+        { label: 'Lenguages', items: ['Python', 'JavaScript', 'C++', 'Java']},
+        { label: 'Backend', items: ['Django', 'FastAPI', 'Node.js'] },
+        { label: 'Frontend', items: ['React', 'Next.js', 'Svelte', 'Lenguage Estatico', 'Tailwind'] },
+        { label: 'Bases de datos', items: ['PostgreSQL', 'MySQL', 'SQLite', 'Redist'] },
+        { label: 'DevOps y herramientas', items: ['Docker', 'Git', 'Linux', 'Windows'] },
         {
           label: 'Otros',
-          items: ['C++', 'REST APIs', 'Microservicios', 'Ciberseguridad básica'],
+          items: ['REST APIs', 'Microservicios', 'Ciberseguridad básica'],
         },
       ],
     },
@@ -364,7 +365,7 @@ export const translations = {
           solution:
             'Custom solutions to automate administrative tasks and integrate internal systems through REST APIs with Django and FastAPI.',
           result: '40% reduction in administrative task execution time.',
-          stack: ['Django', 'FastAPI', 'PostgreSQL', 'MySQL', 'Python'],
+          stack: ['Django', 'FastAPI', 'PostgreSQL', 'Redist', 'Python'],
           repo: '',
           demo: '',
         },
@@ -372,13 +373,14 @@ export const translations = {
     },
     skills: {
       groups: [
-        { label: 'Backend', items: ['Python', 'Django', 'FastAPI', 'Node.js'] },
-        { label: 'Frontend', items: ['JavaScript', 'React', 'Next.js'] },
-        { label: 'Databases', items: ['PostgreSQL', 'MySQL', 'SQLite', 'MongoDB'] },
-        { label: 'DevOps & tools', items: ['Docker', 'Git', 'Linux'] },
+        { label: 'Language', items: ['Python', 'JavaScript', 'C++', 'Java']},
+        { label: 'Backend', items: ['Django', 'FastAPI', 'Node.js'] },
+        { label: 'Frontend', items: ['React', 'Next.js', 'Svelte', 'Static Language', 'Tailwind'] },
+        { label: 'Databases', items: ['PostgreSQL', 'MySQL', 'SQLite', 'Redist'] },
+        { label: 'DevOps & tools', items: ['Docker', 'Git', 'Linux', 'Windows'] },
         {
           label: 'Other',
-          items: ['C++', 'REST APIs', 'Microservices', 'Basic cybersecurity'],
+          items: ['REST APIs', 'Microservices', 'Basic cybersecurity'],
         },
       ],
     },
