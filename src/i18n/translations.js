@@ -53,6 +53,20 @@ export const translations = {
         subtitle:
           '¿Tienes un proyecto, una automatización pendiente o necesitas reforzar tu equipo? Estoy disponible para trabajo remoto.',
         response: 'Respondo normalmente en menos de 24 horas.',
+        contactForm: {
+          name: 'Nombre',
+          namePlaceholder: 'Tu nombre',
+          email: 'Email',
+          emailPlaceholder: 'tu@email.com',
+          subject: 'Asunto',
+          subjectPlaceholder: '¿En qué puedo ayudarte?',
+          message: 'Mensaje',
+          messagePlaceholder: 'Cuéntame sobre tu proyecto...',
+          submit: 'Enviar mensaje',
+          submitting: 'Enviando...',
+          success: '¡Mensaje enviado! Te responderé pronto.',
+          error: 'Hubo un error. Inténtalo de nuevo o escríbeme directamente.',
+        },
       },
     },
     about: {
@@ -255,6 +269,20 @@ export const translations = {
         subtitle:
           'Do you have a project, a pending automation, or need to strengthen your team? I am available for remote work.',
         response: 'I usually reply within 24 hours.',
+        contactForm: {
+          name: 'Name',
+          namePlaceholder: 'Your name',
+          email: 'Email',
+          emailPlaceholder: 'you@email.com',
+          subject: 'Subject',
+          subjectPlaceholder: 'How can I help you?',
+          message: 'Message',
+          messagePlaceholder: 'Tell me about your project...',
+          submit: 'Send message',
+          submitting: 'Sending...',
+          success: 'Message sent! I will reply soon.',
+          error: 'Something went wrong. Please try again or email me directly.',
+        },
       },
     },
     about: {

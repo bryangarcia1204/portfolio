@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../i18n/LanguageContext'
 import SectionHeading from './SectionHeading'
+import ContactForm from './ContactForm'
+import { Toaster } from 'react-hot-toast'
 import { viewport } from '../lib/animations'
 
 export default function Contact() {
@@ -8,10 +10,7 @@ export default function Contact() {
   const { sections, contact } = t
 
   return (
-    <section
-      id="contacto"
-      className="py-24 relative overflow-hidden border-t border-slate-900"
-    >
+    <section id="contacto" className="py-24 relative overflow-hidden border-t border-slate-900">
       {/* Glow pulsante de fuego */}
       <motion.div
         animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.6, 0.35] }}
@@ -23,18 +22,19 @@ export default function Contact() {
         }}
       />
 
-      <div className="container-x max-w-3xl text-center relative">
+      <div className="container-x max-w-3xl relative">
         <SectionHeading
           title={sections.contact.title}
           subtitle={sections.contact.subtitle}
           center
         />
 
+        {/* Botones de contacto directo (se mantienen) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-wrap justify-center gap-3 mb-10"
         >
           <motion.a
@@ -69,16 +69,34 @@ export default function Contact() {
           )}
         </motion.div>
 
+        {/* Formulario */}
+        <div className="card spotlight">
+          <ContactForm />
+        </div>
+
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={viewport}
           transition={{ delay: 0.4 }}
-          className="text-sm text-slate-500"
+          className="text-sm text-slate-500 text-center mt-6"
         >
           {sections.contact.response}
         </motion.p>
       </div>
+
+      {/* Toaster para las notificaciones (puede ir aquí o en App.jsx) */}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 5000,
+          style: {
+            background: '#0a0a0a',
+            color: '#fff',
+            border: '1px solid rgba(255,87,34,0.3)',
+          },
+        }}
+      />
     </section>
   )
 }
